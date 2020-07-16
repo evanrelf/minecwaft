@@ -25,6 +25,20 @@ provider "aws" {
   region = "us-west-1"
 }
 
+provider "external" {
+  version = "~> 1.2"
+}
+
+provider "null" {
+  version = "~> 2.1"
+}
+
+module "deploy_nixos" {
+  source = "github.com/tweag/terraform-nixos//deploy_nixos?ref=4979e668444529438d42f5230a59d2388dd65f86"
+  nixos_config = "./configuration.nix"
+  target_host = digitalocean_droplet.droplet.ipv4_address
+}
+
 data "digitalocean_image" "image" {
   name   = "NixOS" # Located in sfo2
   source = "user"
