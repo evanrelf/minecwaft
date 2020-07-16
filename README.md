@@ -6,6 +6,9 @@ A Minecraft server, running in a Docker container, running in a NixOS virtual
 machine, hosted on DigitalOcean, provisioned using Terraform, with state managed
 in an S3 bucket.
 
+Lots of credit goes to [itzg/docker-minecraft-server][docker-image], a super
+configurable, batteries-included Docker image for running Minecraft servers.
+
 I have no plans to generalize this for general consumption, but feel free to
 poke around and steal anything you find useful.
 
@@ -54,3 +57,5 @@ $ terraform apply
 # Destroy everything to save money
 $ terraform destroy
 ```
+
+[docker-image]: https://github.com/itzg/docker-minecraft-server
