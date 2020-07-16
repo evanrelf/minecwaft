@@ -36,6 +36,7 @@ provider "null" {
 module "deploy_nixos" {
   source = "github.com/tweag/terraform-nixos//deploy_nixos?ref=4979e668444529438d42f5230a59d2388dd65f86"
   nixos_config = "./configuration.nix"
+  NIX_PATH = "nixpkgs=./nixpkgs.nix:nixpkgs-overlays="
   target_host = digitalocean_droplet.droplet.ipv4_address
 }
 
