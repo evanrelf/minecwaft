@@ -1,15 +1,13 @@
-{ pure ? false # Provide all required packages, for use with `nix-shell --pure`
+{ pkgs ? import ./nixpkgs.nix {}
+, pure ? false # Provide all required packages, for use with `nix-shell --pure`
 }:
 
 let
-  pkgs = import ./nixpkgs.nix {};
-
   lib = pkgs.lib;
 
 in
   pkgs.mkShell {
-    buildInputs = with pkgs;
-      [ terraform ] ++ lib.optional pure [ git nix ];
+    buildInputs = with pkgs; [ terraform ] ++ lib.optional pure [ git nix ];
 
     shellHook = ''
       export NIX_PATH="nixpkgs=${pkgs.path}"
