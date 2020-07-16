@@ -35,7 +35,6 @@
       VERSION = "1.15.2";
       SERVER_NAME = "minecwaft";
       MOTD = "minecwaft";
-      ICON = builtins.path { name = "minecwaft-icon"; path = ./icon.png; };
       MAX_PLAYERS = "10";
       MODE = "survival";
       DIFFICULTY = "normal";
