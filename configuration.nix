@@ -18,6 +18,11 @@
 
   networking.firewall.allowedTCPPorts = [ 22 25565 ];
 
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = false;
+  };
+
   docker-containers.minecwaft = {
     image = "itzg/minecraft-server";
     ports = [ "25565:25565" ];
