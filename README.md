@@ -12,7 +12,9 @@ This is written with my needs in mind, so lots of assumptions are made:
 
 - **Local machine**
   - You have [Nix](https://nixos.org) installed
+  - You have Git installed
   - You have credentials for DigitalOcean and AWS ambiently available
+  - You have the SSH key you want to use added to your running SSH agent
 
 - **DigitalOcean**
   - You want everything in the `sfo2` region because you're on the west coast
@@ -44,7 +46,7 @@ $ terraform init
 # Realize your infrastructure
 $ terraform apply
 
-# TODO: Where's the Minecraft server?
+# Play Minecraft with your non-techy friends :-)
 
 # Destroy everything to save money
 $ terraform destroy
@@ -52,13 +54,8 @@ $ terraform destroy
 
 ## Todo
 
-Remaining tasks:
-
-- Write NixOS configuration
-- Write scripts to automate configuration over SSH
 - When starting a new server:
-  - Copy NixOS system closure to DigitalOcean droplet
-  - Switch to the new system configuration
+  - Offer the option to snapshot the droplet before destroying it
 - When continuing with an old server:
   - Restore an old droplet snapshot instead of creating a blank droplet
   - When finished, snapshot the droplet, then destroy it
