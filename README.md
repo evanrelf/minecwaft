@@ -54,8 +54,3 @@ $ terraform apply
 # Destroy everything to save money
 $ terraform destroy
 ```
-
-## Todo
-
-- Add ability to snapshot droplet before destroying it
-- Add ability to restore from droplet snapshot
