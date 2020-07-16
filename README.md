@@ -10,33 +10,36 @@ in an S3 bucket.
 
 This is written with my needs in mind, so lots of assumptions are made:
 
-- **Local machine**
-  - You have [Nix](https://nixos.org) installed
-  - You have Git installed
-  - You have credentials for DigitalOcean and AWS ambiently available
-  - You have the SSH key you want to use added to your running SSH agent
+### Local machine
 
-- **DigitalOcean**
-  - You want everything in the `sfo2` region because you're on the west coast
-  - You have a DigitalOcean token available to Terraform (via the
-    `DIGITALOCEAN_TOKEN` environment variable)
-  - There exists a custom image named `NixOS` in the `sfo2` region, which
-    provides the [NixOS](https://nixos.org) Linux distro
+- You have [Nix](https://nixos.org) installed
+- You have Git installed
+- You have credentials for DigitalOcean and AWS ambiently available
+- You have the SSH key you want to use added to your running SSH agent
 
-- **AWS**
-  - You want everything in the `us-west-1` region because you're on the west
-    coast
-  - You have AWS credentials available to Terraform (via environment variables,
-    `~/.aws/credentials`, etc.)
-  - There exists an S3 bucket named `evanrelf-terraform-state-minecwaft` in the
-    `us-west-1` region
+### DigitalOcean
+
+- You want everything in the `sfo2` region because you're on the west coast
+- You have a DigitalOcean token available to Terraform (via the
+  `DIGITALOCEAN_TOKEN` environment variable)
+- There exists a custom image named `NixOS` in the `sfo2` region, which
+  provides the [NixOS](https://nixos.org) Linux distro
+
+### AWS
+
+- You want everything in the `us-west-1` region because you're on the west
+  coast
+- You have AWS credentials available to Terraform (via environment variables,
+  `~/.aws/credentials`, etc.)
+- There exists an S3 bucket named `evanrelf-terraform-state-minecwaft` in the
+  `us-west-1` region
 
 I have no plans to generalize this for general consumption, but feel free to
 poke around and steal anything you find useful.
 
 ## Usage
 
-```
+```bash
 # Enter the Nix shell
 $ nix-shell
 
@@ -54,8 +57,5 @@ $ terraform destroy
 
 ## Todo
 
-- When starting a new server:
-  - Offer the option to snapshot the droplet before destroying it
-- When continuing with an old server:
-  - Restore an old droplet snapshot instead of creating a blank droplet
-  - When finished, snapshot the droplet, then destroy it
+- Add ability to snapshot droplet before destroying it
+- Add ability to restore from droplet snapshot
