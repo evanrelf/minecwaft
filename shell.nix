@@ -12,6 +12,8 @@ in
       [ terraform ] ++ lib.optional pure [ git nix ];
 
     shellHook = ''
+      export NIX_PATH="nixpkgs=${pkgs.path}"
+
       command -v git >/dev/null \
         || echo "Warning: Couldn't find git in your PATH"
 
