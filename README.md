@@ -6,6 +6,9 @@ A Minecraft server, running in a Docker container, running in a NixOS virtual
 machine, hosted on DigitalOcean, provisioned using Terraform, with state managed
 in an S3 bucket.
 
+I have no plans to generalize this for general consumption, but feel free to
+poke around and steal anything you find useful.
+
 ## Assumptions
 
 This is written with my needs in mind, so lots of assumptions are made:
@@ -33,9 +36,6 @@ This is written with my needs in mind, so lots of assumptions are made:
   `~/.aws/credentials`, etc.)
 - There exists an S3 bucket named `evanrelf-terraform-state-minecwaft` in the
   `us-west-1` region
-
-I have no plans to generalize this for general consumption, but feel free to
-poke around and steal anything you find useful.
 
 ## Usage
 
