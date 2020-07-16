@@ -31,8 +31,8 @@
     environment = {
       EULA = "TRUE";
       TYPE = "PAPER";
-      PAPERBUILD = "208";
-      VERSION = "1.15.2";
+      PAPERBUILD = "91";
+      VERSION = "1.16.1";
       SERVER_NAME = "minecwaft";
       MOTD = "minecwaft";
       MAX_PLAYERS = "10";
