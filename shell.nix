@@ -4,6 +4,8 @@ let
 in
   pkgs.mkShell {
     buildInputs = with pkgs; [
+      git
+      nix
       terraform
     ];
   }
