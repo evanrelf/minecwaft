@@ -1,8 +1,17 @@
-{ modulesPath, lib, ... }:
+{ lib, modulesPath, pkgs, ... }:
 
 {
   imports = lib.optional (builtins.pathExists ./do-userdata.nix) ./do-userdata.nix ++ [
     (modulesPath + "/virtualisation/digital-ocean-config.nix")
+  ];
+
+  environment.systemPackages = with pkgs; [
+    htop
+    kakoune
+    neovim
+    tmux
+    ripgrep
+    fd
   ];
 
   networking.hostName = "minecwaft";
