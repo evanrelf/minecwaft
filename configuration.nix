@@ -28,6 +28,7 @@
     ports = [ "25565:25565" ];
     volumes = [ "/var/minecwaft/data:/data" ];
     workdir = "/var/minecwaft";
+    log-driver = "journald";
     environment = {
       EULA = "TRUE";
       TYPE = "PAPER";
